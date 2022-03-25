@@ -44,7 +44,7 @@ function Giverating() {
     onSubmit: async (values) => {
       try {
         console.log(values);
-        let data = await axios.put(`http://localhost:3004/gradetask/${params.id}`, values)
+        let data = await axios.put(`https://zenclass-project1-backend.herokuapp.com/gradetask/${params.id}`, values)
         navigate('/rate')
         } catch (error) {
         console.log(error)

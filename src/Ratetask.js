@@ -13,7 +13,7 @@ function Ratetask() {
     
       let fetchtask = async () => {
         try {
-          let itemdetials = await axios.get(`http://localhost:3004/task`,{
+          let itemdetials = await axios.get(`https://zenclass-project1-backend.herokuapp.com/task`,{
             headers: {
                 Authorization: window.localStorage.getItem("my_token")
             }

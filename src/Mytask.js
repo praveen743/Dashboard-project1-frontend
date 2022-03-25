@@ -12,7 +12,7 @@ function Mytask({user}) {
   
     let fetchtask = async () => {
       try {
-         let itemdetials = await axios.get(`http://localhost:3004/mytask/${user.email}`,{
+         let itemdetials = await axios.get(`https://zenclass-project1-backend.herokuapp.com/mytask/${user.email}`,{
           headers: {
               Authorization: window.localStorage.getItem("my_token")
           }

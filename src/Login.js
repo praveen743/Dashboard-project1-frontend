@@ -14,7 +14,7 @@ function Login({setuser,settoken}) {
         onSubmit: async (values) => {
             try {
                 console.log(values);
-                let data = await axios.post("http://localhost:3004/login", values)
+                let data = await axios.post("https://zenclass-project1-backend.herokuapp.com/login", values)
                 window.localStorage.setItem("my_token", data.data.token)
                 console.log(data.data);
                 

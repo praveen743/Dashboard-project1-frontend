@@ -17,7 +17,7 @@ function Register() {
         onSubmit: async (values) => {
             try {
                  
-                var message = await axios.post("http://localhost:3004/register", values);
+                var message = await axios.post("https://zenclass-project1-backend.herokuapp.com/register", values);
                 
                 if(message.data.message === "registered"){
                     alert(message.data.message);
