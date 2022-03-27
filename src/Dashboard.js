@@ -7,7 +7,7 @@ function Dashboard({user}) {
   const [attendace, setattendance] = useState(0);
 
   async function task() {
-    var taskarr = await axios.get(`https://zenclass-project1-backend.herokuapp.com/${user.email}`,{
+    var taskarr = await axios.get(`http://localhost:3003/task/${user.email}`,{
       headers:{
         Authorization:  window.localStorage.getItem("my_token")
       }
@@ -21,7 +21,7 @@ function Dashboard({user}) {
   }
 
   async function attendance() {
-    var attendancearr = await axios.get(`https://zenclass-project1-backend.herokuapp.com/${user.email}`,{
+    var attendancearr = await axios.get(`http://localhost:3003/attendance/${user.email}`,{
       headers:{
         Authorization:  window.localStorage.getItem("my_token")
       }

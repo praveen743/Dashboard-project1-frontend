@@ -41,7 +41,7 @@ export default function Sidebar() {
                 </li>
 
                 <li class="nav-item">
-                    <Link class="nav-link collapsed" to="/mytask" data-toggle="collapse" data-target="#collapseTwo"
+                    <Link class="nav-link collapsed" to="/tasktypes" data-toggle="collapse" data-target="#collapseTwo"
                         aria-expanded="true" aria-controls="collapseTwo">
                         <i class="fas fa-fw fa-cog"></i>
                         <span>Tasks</span>

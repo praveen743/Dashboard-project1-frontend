@@ -17,6 +17,9 @@ import Mytask from './Mytask';
 import Ratetask from './Ratetask';
 import Giverating from './Giverating';
 import { Chart } from 'react-chartjs-2';
+import Tasktype from './Tasktype';
+import Tasknotgraded from './Tasknotgraded';
+import Edittask from './Edittask';
 
 function App() {
   const [user,setuser]=useState(null)
@@ -42,6 +45,9 @@ function App() {
                   <Route path="/rate" element={<Ratetask user={user} />}></Route>
                   <Route path="/giverate/:id" element={<Giverating user={user} />}></Route>
                   <Route path="/chart" element={<Chart user={user} />}></Route>
+                  <Route path="/tasktypes" element={<Tasktype user={user} />}></Route>
+                  <Route path="/notgraded" element={<Tasknotgraded user={user} />}></Route>
+                  <Route path="/edittask/:id" element={<Edittask user={user} />}></Route>
                 </Routes>
               </div>
             </div>

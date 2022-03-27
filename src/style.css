@@ -9,6 +9,15 @@
     margin-right: 25px;
 }
 
+Link{
+    text-decoration: none;
+}
+
+#tbtn{
+    font-weight: bold;
+    margin-right: 6px;
+}
+
 #namehead{
     background-color: rgb(98, 98, 245);
     color: white;

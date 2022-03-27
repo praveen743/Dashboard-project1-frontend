@@ -25,7 +25,7 @@ onSubmit={async (values) =>   {
         console.log(values);
         console.log(user?user.email:"");
 
-        var response = await axios.post("https://zenclass-project1-backend.herokuapp.com/attendance", values);
+        var response = await axios.post("http://localhost:3003/attendance", values);
         alert(response.data.message)
         navigate("/dashboard")
         

@@ -13,12 +13,12 @@ function Ratetask() {
     
       let fetchtask = async () => {
         try {
-          let itemdetials = await axios.get(`https://zenclass-project1-backend.herokuapp.com/task`,{
+          let itemdetials = await axios.get(`http://localhost:3003/alltask`,{
             headers: {
                 Authorization: window.localStorage.getItem("my_token")
             }
         });
-        // console.log(itemdetials.data)
+        console.log(itemdetials.data)
           setlist(itemdetials.data)
         } catch (error) {
           console.log(error)
@@ -37,7 +37,10 @@ function Ratetask() {
             <li class="list-group-item" id='taskcard'> {obj.classnumber}</li>
             <li class="list-group-item" id='taskcard'>
                <button className='btn btn-light' id='ratebtn'>
-                   <a href={obj.tasklink}>View Task</a></button>  </li>
+                   <a href={obj.deploylink}>View Deployment</a></button>  </li>
+                   <li class="list-group-item" id='taskcard'>
+               <button className='btn btn-light' id='ratebtn'>
+                   <a href={obj.sourcelink}>View Sourcecode</a></button>  </li>
             <li class="list-group-item" id='taskcard'>
                <Link to={`/giverate/${obj._id}`}>
                <button className='btn btn-light' id='ratebtn'>Rate Task</button>
