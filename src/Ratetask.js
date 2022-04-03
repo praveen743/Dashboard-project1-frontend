@@ -15,7 +15,7 @@ function Ratetask({user}) {
       let fetchtask = async () => {
         try {
           if(user!== null){
-            let itemdetials = await axios.get(`http://localhost:3003/alltask`,{
+            let itemdetials = await axios.get(`https://dashboard-project1-backend.herokuapp.com/alltask`,{
               headers: {
                   Authorization: window.localStorage.getItem("my_token")
               }
