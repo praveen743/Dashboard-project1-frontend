@@ -24,7 +24,7 @@ onSubmit={async (values) =>   {
     try {
         console.log(values);
  
-        var response = await axios.post("http://localhost:3003/attendance", values);
+        var response = await axios.post("https://dashboard-project1-backend.herokuapp.com/attendance", values);
         alert(response.data.message)
         console.log(response.data.message)
         if(response.data.message==="Done"){
