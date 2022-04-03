@@ -31,13 +31,13 @@ function App() {
           <Sidebar />
           <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
-              <Topbar user={user} />
+              <Topbar user={user} setuser={setuser}/>
               <div class="container-fluid">
                 <Routes>
                   <Route path="/" element={<Register />}></Route>
                   <Route path="/login" element={<Login setuser={setuser} settoken={settoken}/>}></Route>
                   <Route path="/dashboard" element={<Dashboard user={user} token={token}/>}></Route>
-                  <Route path="/classes" element={<Classes/>}></Route>
+                  <Route path="/classes" element={<Classes user={user}/>}></Route>
                   <Route path="/:id" element={<Inclass/>}></Route>
                   <Route path="/:id/task" element={<Task user={user}/>}></Route>
                   <Route path="/:id/attendance" element={<Attendance user={user} />}></Route>

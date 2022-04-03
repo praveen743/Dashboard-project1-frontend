@@ -2,7 +2,10 @@
     background-color: rgb(98, 98, 245);
     color: white;
     font-weight: bold;
-    margin-left: 900px;
+    float: right;
+    margin-top: 15px;
+    margin-right: 20px;
+     /* margin-left: 900px; */
 }
 #maincard{
     margin-top: 25px;
@@ -46,3 +49,13 @@ Link{
     color: white;
     font-weight: bold;
 }
+
+.tpbar{
+    height: 70px;
+    box-shadow: 1px 0px 3px gray;
+    margin-bottom: 15px;
+ }
+
+ #accordionSidebar{
+     height: 100%;
+ }

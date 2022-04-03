@@ -9,9 +9,9 @@ function Edittask({user}) {
     useEffect(async () => {
         let userData = await axios.get(`http://localhost:3003/getbyid/${params.id}`);
         console.log(userData.data[0]);
+         formik.setFieldValue('sourcelink',userData.data[0].sourcelink)
+         formik.setFieldValue('deploylink',userData.data[0].deploylink)
          formik.setFieldValue('classnumber',userData.data[0].classnumber)
-        
-         
         },[])
 
 
@@ -48,6 +48,7 @@ function Edittask({user}) {
                         <div className='col-lg-4 text-right align-self-center'>
                             <label><b>Source code link:</b></label></div>
                         <div className='col-lg-8'><input type="text" className='form-control'
+                        required
                             onChange={formik.handleChange} value={formik.values.sourcelink} name='sourcelink'></input></div>
                     </div>
 
@@ -55,12 +56,14 @@ function Edittask({user}) {
                         <div className='col-lg-4 text-right align-self-center'>
                             <label><b>Deployment link:</b></label></div>
                         <div className='col-lg-8'><input type="text" className='form-control'
+                        required
                             onChange={formik.handleChange} value={formik.values.deploylink} name='deploylink'></input></div>
                     </div>
 
                     <div className='row mt-5'>
                         <div className='col-lg-4 text-right align-self-center'><label><b>Class Number:</b></label></div>
                         <div className='col-lg-2'><input type="text" className='form-control'
+                        required
                              value={formik.values.classnumber} name='classnumber'></input></div>
                     </div>
                      

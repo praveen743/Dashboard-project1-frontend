@@ -1,21 +1,42 @@
 import react, { useEffect } from "react";
 import axios from "axios";
 import './style.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
  
-export default function Topbar({user}) {
+export default function Topbar({user,setuser}) {
+var navigate = useNavigate();
     useEffect(async () => {
-         var userid = await axios.get("http://localhost:3004/login")
-         console.log(userid.data)
+        setuser(window.localStorage.getItem("useremail"))
       }, [])
-    return (
-        <div>
-             <nav class="navbar  navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"> 
+    // useEffect(async () => {
+    //      var userid = await axios.get("http://localhost:3004/login")
+    //      console.log(userid.data)
+    //   }, [])
 
-                <div >{user?<button className="btn" id='profile'>{user.email}</button>
-                : <Link to='/login'><button className="btn" id='profile'>login</button></Link>}</div>
-                    
-                        </nav>
+    let handleLogout = async (id) => {
+        try {
+            let result = window.confirm("Are you sure do you want to Logout?")
+            if (result) {
+                 
+              setuser(null);
+              navigate('/login')
+    
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+       
+    return (
+        <div className="tpbar">
+             
+             <button className="btn" id='profile'  onClick={() => handleLogout()}>
+                        Logout</button>
+                {user===null?<Link to='/login'><button className="btn" id='profile'>Login
+                </button></Link>
+                : <button className="btn" id='profile'>{user}</button>}
+                   
+                         
                         
                         
         </div>

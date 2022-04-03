@@ -38,27 +38,28 @@ function Register() {
                 <div className='container'>
                     <div className='row mt-5'>
                         <div className='col-lg-4 text-right align-self-center'><label><b>Firstname:</b></label></div>
-                        <div className='col-lg-4'><input type="text" className='form-control'
+                        <div className='col-lg-4'><input type="text" className='form-control' required
                             onChange={formik.handleChange} value={formik.values.firstname} name='firstname'></input></div>
                     </div>
                     <div className='row mt-5'>
                         <div className='col-lg-4 text-right align-self-center'><label><b >Lastname:</b></label></div>
-                        <div className='col-lg-4'><input type="text" className='form-control'
+                        <div className='col-lg-4'><input type="text" className='form-control' required
                             onChange={formik.handleChange} value={formik.values.lastname} name='lastname'></input></div>
                     </div>
                     <div className='row mt-5'>
                         <div className='col-lg-4 text-right align-self-center'><label><b>Email:</b></label></div>
-                        <div className='col-lg-4'><input type="email" className='form-control'
+                        <div className='col-lg-4'><input type="email" className='form-control' required
                             onChange={formik.handleChange} value={formik.values.email} name='email'></input></div>
                     </div>
                     <div className='row mt-5'>
                         <div className='col-lg-4 text-right align-self-center'><label><b>Phonenumber:</b></label></div>
-                        <div className='col-lg-4'><input type="text" className='form-control'
+                        <div className='col-lg-4'><input type="tel" className='form-control'
+                         required pattern="[0-9]{10}"
                             onChange={formik.handleChange} value={formik.values.phonenumber} name='phonenumber'></input></div>
                     </div>
                     <div className='row mt-5'>
                         <div className='col-lg-4 text-right align-self-center'><label><b>Password:</b></label></div>
-                        <div className='col-lg-4'><input type="password" className='form-control'
+                        <div className='col-lg-4'><input type="password" className='form-control' required
                             onChange={formik.handleChange} value={formik.values.password} name='password'></input></div>
                     </div>
                     <div className='row mt-3'>

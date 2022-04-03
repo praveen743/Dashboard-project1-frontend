@@ -18,16 +18,19 @@ function Attendance({user}) {
 initialValues={{
 Attendance: '',
 classnumber:`${params.id}`,
-userid: `${user?user.email:''}`,
+userid:user,
 }}
 onSubmit={async (values) =>   {
     try {
         console.log(values);
-        console.log(user?user.email:"");
-
+ 
         var response = await axios.post("http://localhost:3003/attendance", values);
         alert(response.data.message)
-        navigate("/dashboard")
+        console.log(response.data.message)
+        if(response.data.message==="Done"){
+          navigate("/dashboard")
+        }
+       
         
     } catch (error) {
         console.log(error)
@@ -39,7 +42,7 @@ onSubmit={async (values) =>   {
 <div id="my-radio-group" className='text-center'><b>{`Attendance for ${params.id}`}</b></div>
 <div role="group" aria-labelledby="my-radio-group" className='text-center'>
 <label>
-<Field type="radio" name="Attendance" value="1" />
+<Field type="radio" name="Attendance" value="1"  />
 Present
 </label><br/>
 <label>

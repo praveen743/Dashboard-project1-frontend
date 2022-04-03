@@ -13,7 +13,7 @@ function Tasknotgraded({user}) {
   
     let fetchtask = async () => {
       try {
-         let itemdetials = await axios.get(`http://localhost:3003/notgraded/${user.email}`,{
+         let itemdetials = await axios.get(`http://localhost:3003/notgraded/${user}`,{
           headers: {
               Authorization: window.localStorage.getItem("my_token")
           }

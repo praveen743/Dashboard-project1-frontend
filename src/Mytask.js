@@ -12,12 +12,17 @@ function Mytask({user}) {
   
     let fetchtask = async () => {
       try {
-         let itemdetials = await axios.get(`http://localhost:3003/mytask/${user.email}`,{
+         let itemdetials = await axios.get(`http://localhost:3003/mytask/${user}`,{
           headers: {
               Authorization: window.localStorage.getItem("my_token")
           }
       });
+      if((itemdetials.data.length)!== 0){
         setlist(itemdetials.data)
+      }else{
+        alert("In this section rated tasks will be shown, go to Rate Task section and rate the task")
+      }
+        
       } catch (error) {
         console.log(error)
       }

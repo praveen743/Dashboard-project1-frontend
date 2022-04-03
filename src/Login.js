@@ -15,11 +15,13 @@ function Login({setuser,settoken}) {
             try {
                 console.log(values);
                 let data = await axios.post("http://localhost:3003/login", values)
-                window.localStorage.setItem("my_token", data.data.token)
+                console.log(data.data.user.email)
+                window.localStorage.setItem("my_token", data.data.token);
+                window.localStorage.setItem("useremail", data.data.user.email);
                 console.log(data.data);
                 
-                if (data.data.message == "login") {
-                    setuser(data.data.user);
+                if (data.data.message === "login") {
+                    setuser(data.data.user.email);
                     settoken(data.data.token)
                     navigate("/dashboard");
                 }else{
@@ -27,7 +29,9 @@ function Login({setuser,settoken}) {
                 }
 
             } catch (error) {
-                console.log(error)
+                alert("UserID or Password Incorrect :( ")
+                alert("Register to login")
+                navigate("/");
             }
         }
     })

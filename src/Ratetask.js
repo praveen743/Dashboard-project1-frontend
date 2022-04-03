@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import { useState } from 'react';
 import './style.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-function Ratetask() {
+function Ratetask({user}) {
+  var navigate = useNavigate()
     const [list,setlist] = useState([])
     useEffect(async () => {
         fetchtask()
@@ -13,13 +14,19 @@ function Ratetask() {
     
       let fetchtask = async () => {
         try {
-          let itemdetials = await axios.get(`http://localhost:3003/alltask`,{
-            headers: {
-                Authorization: window.localStorage.getItem("my_token")
-            }
-        });
-        console.log(itemdetials.data)
-          setlist(itemdetials.data)
+          if(user!== null){
+            let itemdetials = await axios.get(`http://localhost:3003/alltask`,{
+              headers: {
+                  Authorization: window.localStorage.getItem("my_token")
+              }
+          });
+          console.log(itemdetials.data)
+            setlist(itemdetials.data)
+          }else{
+            alert("Login");
+          navigate("/login")
+          }
+         
         } catch (error) {
           console.log(error)
         }

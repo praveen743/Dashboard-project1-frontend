@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 function Task({user}) {
     let params = useParams();
     const navigate = useNavigate();
+    
   const formik = useFormik({
     initialValues: {
         sourcelink: '',
@@ -12,7 +13,7 @@ function Task({user}) {
         status:'notdone',
         taskrating:'not yet graded',
         classnumber:`${params.id}`,
-        userid:user? user.email:""
+        userid:user
          },
     onSubmit: async (values) => {
         try {
@@ -38,6 +39,7 @@ function Task({user}) {
                         <div className='col-lg-4 text-right align-self-center'>
                             <label><b>Source code link:</b></label></div>
                         <div className='col-lg-8'><input type="url" className='form-control'
+                        required
                             onChange={formik.handleChange} value={formik.values.sourcelink} name='sourcelink'></input></div>
                     </div>
 
@@ -45,6 +47,7 @@ function Task({user}) {
                         <div className='col-lg-4 text-right align-self-center'>
                             <label><b>Deployment link:</b></label></div>
                         <div className='col-lg-8'><input type="url" className='form-control'
+                        required
                             onChange={formik.handleChange} value={formik.values.deploylink} name='deploylink'></input></div>
                     </div>
 

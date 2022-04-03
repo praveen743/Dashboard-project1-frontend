@@ -6,8 +6,13 @@ function Dashboard({user}) {
   const [count, setcount] = useState(0);
   const [attendace, setattendance] = useState(0);
 
+  useEffect(async () => {
+    task()
+    attendance()
+  }, [])
+
   async function task() {
-    var taskarr = await axios.get(`http://localhost:3003/task/${user.email}`,{
+    var taskarr = await axios.get(`http://localhost:3003/task/${user}`,{
       headers:{
         Authorization:  window.localStorage.getItem("my_token")
       }
@@ -21,7 +26,7 @@ function Dashboard({user}) {
   }
 
   async function attendance() {
-    var attendancearr = await axios.get(`http://localhost:3003/attendance/${user.email}`,{
+    var attendancearr = await axios.get(`http://localhost:3003/attendance/${user}`,{
       headers:{
         Authorization:  window.localStorage.getItem("my_token")
       }
@@ -46,10 +51,7 @@ function Dashboard({user}) {
       setattendance(result);
 }
 
-  useEffect(async () => {
-    task()
-    attendance()
-  }, [])
+  
    
   return (
     <>

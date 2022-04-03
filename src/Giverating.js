@@ -66,7 +66,8 @@ function Giverating() {
             <div className='col-lg-4 text-right align-self-center text-dark text-lg'>
               <label><b>  Enter Your Rating For This Task:</b></label></div>
             <div className='col-lg-4'><input type="number" min={0} max={10} className='form-control'
-              onChange={formik.handleChange} value={formik.values.taskrating} name='taskrating'></input></div>
+            required
+            onChange={formik.handleChange} value={formik.values.taskrating} name='taskrating'></input></div>
           </div>
 
 
