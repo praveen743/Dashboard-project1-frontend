@@ -16,7 +16,7 @@ function Giverating() {
 
   let fetchtask = async () => {
     try {
-      let itemdetials = await axios.get(`http://localhost:3003/gradetask/${params.id}`, {
+      let itemdetials = await axios.get(`https://dashboard-project1-backend.herokuapp.com/gradetask/${params.id}`, {
         headers: {
           Authorization: window.localStorage.getItem("my_token")
         }
@@ -47,7 +47,7 @@ function Giverating() {
     onSubmit: async (values) => {
       try {
         console.log(values);
-        let data = await axios.put(`http://localhost:3003/gradetask/${params.id}`, values)
+        let data = await axios.put(`https://dashboard-project1-backend.herokuapp.com/gradetask/${params.id}`, values)
         navigate('/rate')
       } catch (error) {
         console.log(error)
