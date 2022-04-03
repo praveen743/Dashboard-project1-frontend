@@ -13,7 +13,7 @@ function Tasknotgraded({user}) {
   
     let fetchtask = async () => {
       try {
-         let itemdetials = await axios.get(`http://localhost:3003/notgraded/${user}`,{
+         let itemdetials = await axios.get(`https://dashboard-project1-backend.herokuapp.com/notgraded/${user}`,{
           headers: {
               Authorization: window.localStorage.getItem("my_token")
           }
@@ -29,7 +29,7 @@ function Tasknotgraded({user}) {
         try {
             let result = window.confirm("Are you sure do you want to delete task?")
             if (result) {
-                await axios.delete(`http://localhost:3003/deletetask/${id}` )
+                await axios.delete(`https://dashboard-project1-backend.herokuapp.com/deletetask/${id}` )
                 fetchtask()
             }
         } catch (error) {
