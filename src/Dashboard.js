@@ -12,7 +12,7 @@ function Dashboard({user}) {
   }, [])
 
   async function task() {
-    var taskarr = await axios.get(`http://localhost:3003/task/${user}`,{
+    var taskarr = await axios.get(`https://dashboard-project1-backend.herokuapp.com/task/${user}`,{
       headers:{
         Authorization:  window.localStorage.getItem("my_token")
       }
@@ -26,7 +26,7 @@ function Dashboard({user}) {
   }
 
   async function attendance() {
-    var attendancearr = await axios.get(`http://localhost:3003/attendance/${user}`,{
+    var attendancearr = await axios.get(`https://dashboard-project1-backend.herokuapp.com/attendance/${user}`,{
       headers:{
         Authorization:  window.localStorage.getItem("my_token")
       }
