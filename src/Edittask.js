@@ -7,7 +7,7 @@ function Edittask({user}) {
     let params = useParams();
     const navigate = useNavigate();
     useEffect(async () => {
-        let userData = await axios.get(`http://localhost:3003/getbyid/${params.id}`);
+        let userData = await axios.get(`https://dashboard-project1-backend.herokuapp.com/getbyid/${params.id}`);
         console.log(userData.data[0]);
          formik.setFieldValue('sourcelink',userData.data[0].sourcelink)
          formik.setFieldValue('deploylink',userData.data[0].deploylink)
@@ -27,7 +27,7 @@ function Edittask({user}) {
     onSubmit: async (values) => {
         try {
             console.log(values);
-           var response = await axios.put(`http://localhost:3003/edittask/${params.id}`, values);
+           var response = await axios.put(`https://dashboard-project1-backend.herokuapp.com/edittask/${params.id}`, values);
             alert("Task Edited");
             navigate("/dashboard");
             
