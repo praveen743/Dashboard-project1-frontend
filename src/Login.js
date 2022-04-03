@@ -14,7 +14,7 @@ function Login({setuser,settoken}) {
         onSubmit: async (values) => {
             try {
                 console.log(values);
-                let data = await axios.post("http://localhost:3003/login", values)
+                let data = await axios.post("https://dashboard-project1-backend.herokuapp.com/login", values)
                 console.log(data.data.user.email)
                 window.localStorage.setItem("my_token", data.data.token);
                 window.localStorage.setItem("useremail", data.data.user.email);
