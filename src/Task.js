@@ -18,7 +18,7 @@ function Task({user}) {
     onSubmit: async (values) => {
         try {
             console.log(values);
-           var response = await axios.post('http://localhost:3003/task', values);
+           var response = await axios.post('https://dashboard-project1-backend.herokuapp.com/task', values);
             alert(response.data.message)
             navigate("/dashboard");
             
