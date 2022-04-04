@@ -37,12 +37,16 @@ var navigate = useNavigate();
 
  <Link to='/login'><button className="btn" id='profile'>Login
                 </button></Link>
-//                 {user != null?<button className="btn" id='profile'>{user}</button>
-//                 : }
+                 
+                 </div>
+
                    
                          
                        
                         
-        </div>
+        
     )
 }
+
+//                 {user != null?<button className="btn" id='profile'>{user}</button>
+//                 : }
