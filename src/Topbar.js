@@ -19,6 +19,8 @@ var navigate = useNavigate();
             if (result) {
                  
               setuser(null);
+             window.localStorage.setItem("my_token", null);
+                window.localStorage.setItem("useremail", null);
               navigate('/login')
     
             }
