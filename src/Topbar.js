@@ -34,7 +34,7 @@ var navigate = useNavigate();
              
              <button className="btn" id='profile'  onClick={() => handleLogout()}>
                         Logout</button>
-                {user!==null?<button className="btn" id='profile'>{user}</button>
+                {user != null?<button className="btn" id='profile'>{user}</button>
                 : <Link to='/login'><button className="btn" id='profile'>Login
                 </button></Link> }
                    
